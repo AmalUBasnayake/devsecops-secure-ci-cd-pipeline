@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "Running basic security checks..."
+
+if grep -R "password" app/; then
+  echo "Hardcoded password detected!"
+  exit 1
+else
+  echo "No hardcoded secrets found"
+fi
